@@ -13,7 +13,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
     it('preenche os campos obrigatórios e envia o formulário', function () {
-        cy.get('input[id=firstName]').type('Teste Nome', { delay: 100 })
+        cy.get('input[id=firstName]').type('Teste Nome')
         cy.get('input[id=lastName]').type('Teste Sobrenome')
         cy.get('input[id=email]').type('email@email.com')
         cy.get('textarea[id=open-text-area]').type('Teste como podemos ajudar')
@@ -81,7 +81,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
     it('seleciona um produto (YouTube) por seu texto', function () {
-        cy.get('select[id=product]').select('YouTube').should('have.value', 'youtube')
+        cy.get('select[id=product]').select('YouTube').should('have.value', '')
     })
 
     it('seleciona um produto (Mentoria) por seu valor (value)', function () {
