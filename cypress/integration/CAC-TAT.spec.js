@@ -23,7 +23,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
     Cypress._.times(5, () => {
-        it('preenche os campos obrigatórios e envia o formulário', function () {
+        it.only('preenche os campos obrigatórios e envia o formulário', function () {
             cy.get('input[id=firstName]').type('Teste Nome')
             cy.get('input[id=lastName]').type('Teste Sobrenome')
             cy.get('input[id=email]').type('email@email.com')
