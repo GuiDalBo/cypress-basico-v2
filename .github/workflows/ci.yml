@@ -1,12 +1,16 @@
 name: End-to-end tests 🧪
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '15,45 * * * *'
+
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: cypress run
         uses: cypress-io/github-action@v4
