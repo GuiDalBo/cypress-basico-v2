@@ -8,8 +8,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
     it('verifica o título da aplicação', function () {
-        cy.title().should('eq', 'Erro no primeiro teste! Quebrou')
-        //cy.title().should('eq', 'Central de Atendimento ao Cliente TAT')
+        cy.title().should('eq', 'Central de Atendimento ao Cliente TAT')
     })
 
     it('preenche os campos obrigatórios e envia o formulário', function () {
@@ -49,9 +48,9 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
     it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
-        cy.get('input[id=phone]').should('have.text', 'Quebrou de novo!')
+        cy.get('input[id=phone]').should('have.text', '')
         cy.get('input[id=phone]').type('xablau')
-        cy.get('input[id=phone]').should('have.text', 'Quebrou aqui também!')
+        cy.get('input[id=phone]').should('have.text', '')
 
     })
 
@@ -80,7 +79,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function () {
         cy.clock()
         cy.get('button[type=submit]').click()
-        // cy.get('span[class=error').should('be.visible')
+        cy.get('span[class=error').should('be.visible')
         cy.get('span[class=error').should('not.be.visible')
         cy.tick(THREE_SECONDS_IN_MS)
         cy.get('span[class=error').should('not.be.visible')
