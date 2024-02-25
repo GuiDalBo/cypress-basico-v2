@@ -80,7 +80,6 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.clock()
         cy.get('button[type=submit]').click()
         cy.get('span[class=error').should('be.visible')
-        cy.get('span[class=error').should('not.be.visible')
         cy.tick(THREE_SECONDS_IN_MS)
         cy.get('span[class=error').should('not.be.visible')
 
